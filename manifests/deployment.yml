@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pipeimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pipeimage
+  template:
+    metadata:
+      labels:
+        app: pipeimage 
+    spec:
+      containers:
+        - name: pipeimage 
+          image: pipel.azurecr.io/pipeimage
+          ports:
+          - containerPort: 8080
